@@ -29,7 +29,7 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="services">
+    <div className="services" id="service">
       <section className="services-intro">
         <h1>Our Services</h1>
         <p>
