@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <header className="header-container">
       <div className="header-content">
-        <div className="logo-container">
+        <div className="logo-container cursor-pointer">
           <img
             src="/logo.png"
             alt="AccLaw Professionals Logo"
