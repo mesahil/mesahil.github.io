@@ -107,6 +107,7 @@
   .footer-section {
     text-align: center;
     margin: 10px 0;
+    min-width: 246px;
   }
 
   .social {

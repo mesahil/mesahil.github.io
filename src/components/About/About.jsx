@@ -1,4 +1,30 @@
+import ShowCards from "../cardSection/Card";
 import "./about.css";
+
+const values = [
+  {
+    title: "Integrity",
+    description: "Upholding the highest ethical standards in all our dealings.",
+    icon: "📈",
+  },
+  {
+    title: "Excellence",
+    description: "Striving for excellence in every case we handle.",
+    icon: "💪",
+  },
+  {
+    title: "Client-Centered",
+    description:
+      "Prioritizing our clients' needs and interests above all else.",
+    icon: "👥",
+  },
+  {
+    title: "Commitment",
+    description:
+      "Dedicated to achieving the best possible outcomes for our clients.",
+    icon: "💼",
+  },
+];
 
 const About = () => {
   return (
@@ -27,7 +53,7 @@ const About = () => {
       <section className="about-team">
         <h2>Meet Our Team</h2>
         <div className="team-members">
-          <div className="team-member">
+          <div className="team-member flex items-center flex-col">
             <img src="/path-to-image1.jpg" alt="Team Member 1" />
             <h3>John Doe</h3>
             <p>Senior Partner</p>
@@ -36,7 +62,7 @@ const About = () => {
               successful track record in handling complex cases.
             </p>
           </div>
-          <div className="team-member">
+          <div className="team-member flex items-center flex-col">
             <img src="/path-to-image2.jpg" alt="Team Member 2" />
             <h3>Jane Smith</h3>
             <p>Associate Attorney</p>
@@ -45,36 +71,12 @@ const About = () => {
               dedication to client advocacy.
             </p>
           </div>
-          {/* Add more team members as needed */}
         </div>
       </section>
 
       <section className="about-values">
         <h2>Our Values</h2>
-        <div className="values-list">
-          <div className="value-item">
-            <span className="icon">&#x1F4C8;</span>
-            <h3>Integrity</h3>
-            <p>Upholding the highest ethical standards in all our dealings.</p>
-          </div>
-          <div className="value-item">
-            <span className="icon">&#x1F4AA;</span>
-            <h3>Excellence</h3>
-            <p>Striving for excellence in every case we handle.</p>
-          </div>
-          <div className="value-item">
-            <span className="icon">&#x1F4C5;</span>
-            <h3>Client-Centered</h3>
-            <p>Prioritizing our clients' needs and interests above all else.</p>
-          </div>
-          <div className="value-item">
-            <span className="icon">&#x1F4B0;</span>
-            <h3>Commitment</h3>
-            <p>
-              Dedicated to achieving the best possible outcomes for our clients.
-            </p>
-          </div>
-        </div>
+        <ShowCards dataArray={values} />
       </section>
     </div>
   );

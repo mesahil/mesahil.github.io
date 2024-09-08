@@ -1,3 +1,4 @@
+import ShowCards from "../cardSection/Card";
 import "./services.css";
 
 const services = [
@@ -40,15 +41,7 @@ const Services = () => {
         </p>
       </section>
 
-      <section className="services-list">
-        {services.map((service, index) => (
-          <div className="service-item" key={index}>
-            <span className="service-icon">{service.icon}</span>
-            <h2>{service.title}</h2>
-            <p>{service.description}</p>
-          </div>
-        ))}
-      </section>
+      <ShowCards dataArray={services} />
     </div>
   );
 };
