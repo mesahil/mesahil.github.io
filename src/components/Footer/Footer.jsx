@@ -22,7 +22,7 @@ const Footer = () => {
             </a>
           </p>
         </div>
-        <div className="footer-section min-w-4">
+        <div className="footer-section">
           <h3>Follow Us</h3>
           <div className="social">
             <a
