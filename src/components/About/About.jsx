@@ -31,16 +31,31 @@ const About = () => {
     <div className="about" id="about">
       <section className="about-intro">
         <h1>About Us</h1>
+        <h2>
+          Welcome to our all-in-one platform, meticulously designed to simplify
+          and manage legal, secretarial, taxation, and other critical business
+          functions.
+        </h2>
         <p>
-          At <strong>[Law Firm Name]</strong>, we are committed to providing
-          exceptional legal services with the highest level of professionalism
-          and integrity. Our experienced team is dedicated to achieving the best
-          outcomes for our clients, navigating complex legal matters with
-          expertise and care.
+          We are experts in Company Registration, GST, Income Tax Returns (ITR),
+          Trademark Services, Accounting, and an extensive range of legal and
+          taxation solutions, ensuring that your business remains fully
+          compliant with all regulatory requirements. Our motto, "Perfection
+          through Professionals," underscores our commitment to helping startups
+          and established businesses navigate the complexities of running their
+          operations while adhering to legal frameworks. We provide end-to-end
+          solutions for all your business needs, be it legal compliance,
+          secretarial services, taxation, or accounting. At the core of our
+          services is a dedication to delivering highly efficient, personalized
+          solutions, leveraging our deep industry knowledge and expertise. We
+          create innovative, customized offerings that align with your business
+          strategies and objectives. Our team holds integrity and
+          confidentiality in the highest regard, ensuring a professional and
+          trustworthy partnership for every client and project.
         </p>
       </section>
 
-      <section className="about-history">
+      {/* <section className="about-history">
         <h2>Our History</h2>
         <p>
           Established in [Year], <strong>[Law Firm Name]</strong> has been at
@@ -48,7 +63,7 @@ const About = () => {
           have built a reputation for delivering outstanding legal solutions and
           building lasting relationships with our clients.
         </p>
-      </section>
+      </section> */}
 
       <section className="about-team">
         <h2>Meet Our Team</h2>

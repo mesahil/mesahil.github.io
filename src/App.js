@@ -5,7 +5,6 @@ import Services from "./components/Service/Services";
 function App() {
   return (
     <div>
-      main page
       <About />
       <Services />
     </div>
