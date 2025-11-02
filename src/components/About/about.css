@@ -1,155 +1,422 @@
-/* About.css */
+/* About Section */
 
 .about {
-  padding: 20px;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #333;
-  background-color: #f9f9f9;
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
-.about-intro,
-.about-history,
-.about-team,
-.about-values {
-  margin-bottom: 50px;
+.about-intro {
+  max-width: 1280px;
+  margin: 0 auto 5rem;
 }
 
 .about-intro h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #333;
-}
-.about-intro h2 {
-  font-size: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-align: center;
 }
 
-.about-intro p {
+.about-subtitle {
+  font-size: 1.25rem;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-main-text p {
+  font-size: 1.125rem;
   line-height: 1.8;
-  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  text-align: justify;
 }
 
-.about-history h2,
-.about-team h2,
-.about-values h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #ff6b6b;
+.about-main-text strong {
+  color: #1e3a8a;
+  font-weight: 700;
 }
 
-.about-history p {
-  font-size: 1rem;
+.about-main-text em {
+  color: #1e40af;
+  font-style: italic;
+  font-weight: 600;
 }
 
-.about-team {
+.about-highlights {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1.5rem;
 }
 
-.team-members {
+.highlight-card {
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.1);
+  border-color: #1e3a8a;
+  transform: translateY(-4px);
+}
+
+.highlight-card h3 {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  margin-bottom: 0.75rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.highlight-card p {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Leadership Section */
+
+.leadership-section {
+  max-width: 1280px;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.leadership-section h2 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.leadership-intro {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+}
+
+.leadership-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: left;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.leadership-card:hover {
+  box-shadow: 0 20px 60px rgba(30, 58, 138, 0.12);
+  border-color: #1e3a8a;
+}
+
+.leader-image-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.2);
+}
+
+.leader-initials {
+  font-size: 6rem;
+  font-weight: 700;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.leader-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.leader-name {
+  font-size: 2rem;
+  color: #1e3a8a;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+.leader-title {
+  font-size: 1.25rem;
+  color: #64748b;
+  font-weight: 600;
+  margin: 0;
+}
+
+.leader-credentials {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
 }
 
-.team-member {
-  width: 100%;
-  max-width: 300px;
-  text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.credential-badge {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-.team-member img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  border: 3px solid #ff6b6b;
+.leader-bio {
+  font-size: 1.0625rem;
+  color: #475569;
+  line-height: 1.8;
+  margin: 0.75rem 0;
 }
 
-.team-member h3 {
-  margin: 10px 0;
-  color: #333;
+.leader-expertise {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e2e8f0;
 }
 
-.team-member p {
-  font-size: 0.9rem;
-  color: #666;
+.leader-expertise h4 {
+  font-size: 1.25rem;
+  color: #1e3a8a;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.expertise-tag {
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  color: #1e3a8a;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.expertise-tag:hover {
+  background-color: #1e3a8a;
+  color: white;
+  border-color: #1e3a8a;
+  transform: translateY(-2px);
+}
+
+/* Values Section */
 
 .about-values {
+  max-width: 1280px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.values-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+.about-values h2 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
-.value-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 300px;
-  text-align: center;
+.values-intro {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.icon {
-  font-size: 2rem;
-  color: #ff6b6b;
-  margin-bottom: 10px;
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+  .about-content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-highlights {
+    flex-direction: row;
+  }
 }
 
-.value-item h3 {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.value-item p {
-  font-size: 1rem;
-  color: #666;
-}
-
-/* Media Queries */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .about {
-    padding: 40px 20px;
+    padding: 3rem 1.5rem;
   }
 
   .about-intro h1 {
-    font-size: 3rem;
+    font-size: 2.25rem;
   }
-  .about-intro h2 {
+
+  .about-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .about-main-text p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .about-highlights {
+    flex-direction: column;
+  }
+
+  .highlight-card {
+    padding: 1.5rem;
+  }
+
+  .highlight-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .leadership-section h2 {
     font-size: 2rem;
   }
-  .about-intro p {
-    font-size: 1.5rem;
+
+  .leadership-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
   }
 
-  .about-history h2,
-  .about-team h2,
+  .leader-image-placeholder {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .leader-initials {
+    font-size: 4rem;
+  }
+
+  .leader-name {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .leader-title {
+    font-size: 1.125rem;
+    text-align: center;
+  }
+
+  .leader-credentials {
+    justify-content: center;
+  }
+
+  .leader-bio {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .leader-expertise h4 {
+    text-align: center;
+  }
+
+  .expertise-tags {
+    justify-content: center;
+  }
+
   .about-values h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
-  .team-member {
-    flex: 1 1 calc(33.333% - 20px);
+  .values-intro {
+    font-size: 1rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 480px) {
   .about {
-    padding: 60px 20px;
+    padding: 2rem 1rem;
   }
 
-  .team-member {
-    flex: 1 1 calc(25% - 20px);
+  .about-intro h1 {
+    font-size: 1.875rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-main-text p {
+    font-size: 0.9375rem;
+  }
+
+  .highlight-card {
+    padding: 1.25rem;
+  }
+
+  .leadership-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .leadership-card {
+    padding: 1.5rem;
+  }
+
+  .leader-image-placeholder {
+    max-width: 150px;
+  }
+
+  .leader-initials {
+    font-size: 3rem;
+  }
+
+  .leader-name {
+    font-size: 1.5rem;
+  }
+
+  .leader-title {
+    font-size: 1rem;
+  }
+
+  .credential-badge {
+    font-size: 0.8125rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  .leader-bio {
+    font-size: 0.9375rem;
+  }
+
+  .leader-expertise h4 {
+    font-size: 1.125rem;
+  }
+
+  .expertise-tag {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .about-values h2 {
+    font-size: 1.75rem;
   }
 }

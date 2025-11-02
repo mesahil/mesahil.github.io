@@ -2,25 +2,22 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer" id="contactUs">
+    <footer className="footer">
       <div className="footer-content">
         <div className="footer-section contact">
-          <h3>Contact Us</h3>
+          <h3>Acclaw Professionals LLP</h3>
           <p>
-            <strong>ACCLAW PROFESSIONALS LLP</strong>
-            <br />
-            F-2141, 12th Avenue Gaur City-II
-            <br />
-            Greater Noida 201318
-            <br />
-            <a href="tel:+919716661654">+91 9716661654</a>
-            <br />
-            <a href="tel:+919582534575">+91 9582534575</a>
-            <br />
-            <a href="mailto:acclawprofessionals@gmail.com">
-              acclawprofessionals@gmail.com
-            </a>
+            Your trusted partner for comprehensive financial, taxation, and
+            secretarial services. Delivering perfection through professionals.
           </p>
+        </div>
+        <div className="footer-section">
+          <h3>Quick Links</h3>
+          <div className="social">
+            <a href="/#about">About Us</a>
+            <a href="/#service">Our Services</a>
+            <a href="/#contactUs">Contact</a>
+          </div>
         </div>
         <div className="footer-section">
           <h3>Follow Us</h3>
@@ -51,15 +48,9 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="footer-section legal">
-          <h3>Legal</h3>
-          <a href="/">Privacy Policy</a>
-          <br />
-          <a href="/">Terms of Service</a>
-        </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 AccLaw Professionals LLP - All rights reserved.</p>
+        <p>&copy; 2024 Acclaw Professionals LLP - All rights reserved.</p>
       </div>
     </footer>
   );

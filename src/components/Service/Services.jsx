@@ -3,28 +3,40 @@ import "./services.css";
 
 const services = [
   {
-    title: "Corporate Law",
+    title: "GST Services",
     description:
-      "Expert legal services for businesses including mergers, acquisitions, and corporate governance.",
-    icon: "🏢",
+      "Comprehensive GST registration, filing, compliance, and advisory services. We ensure accurate GST returns and help you navigate complex GST regulations with ease.",
+    icon: "📋",
   },
   {
-    title: "Family Law",
+    title: "TDS Compliance",
     description:
-      "Compassionate legal support in family matters such as divorce, child custody, and property settlements.",
-    icon: "👨‍👩‍👧‍👦",
+      "Expert TDS computation, deduction, payment, and return filing services. Stay compliant with TDS regulations and avoid penalties with our professional guidance.",
+    icon: "💰",
   },
   {
-    title: "Criminal Defense",
+    title: "Accounting Services",
     description:
-      "Strong defense strategies to protect your rights and achieve favorable outcomes in criminal cases.",
-    icon: "⚖️",
+      "Complete bookkeeping, financial statement preparation, and accounting solutions. We maintain accurate records and provide insights for better financial decision-making.",
+    icon: "📊",
   },
   {
-    title: "Personal Injury",
+    title: "Internal Control Pre-Audit",
     description:
-      "Dedicated representation for personal injury claims to help you receive fair compensation for your losses.",
-    icon: "🚑",
+      "Thorough evaluation of your internal controls and processes before audits. We identify weaknesses and recommend improvements to strengthen your control environment.",
+    icon: "🔍",
+  },
+  {
+    title: "Internal Audit",
+    description:
+      "Independent and objective internal audit services to assess operations, identify risks, and improve governance. We provide actionable recommendations for operational excellence.",
+    icon: "✓",
+  },
+  {
+    title: "Company Secretarial",
+    description:
+      "Professional company registration, statutory compliance, ROC filings, and corporate governance services to keep your business legally compliant.",
+    icon: "📁",
   },
 ];
 
@@ -34,10 +46,10 @@ const Services = () => {
       <section className="services-intro">
         <h1>Our Services</h1>
         <p>
-          At <strong>[Law Firm Name]</strong>, we offer a wide range of legal
-          services tailored to meet your needs. Our experienced team is
-          committed to providing exceptional service and achieving the best
-          possible outcomes for our clients.
+          At <strong>Acclaw Professionals LLP</strong>, we offer comprehensive
+          financial, taxation, and secretarial services tailored to meet your
+          business needs. Our experienced team is committed to delivering
+          perfection through professionals.
         </p>
       </section>
 

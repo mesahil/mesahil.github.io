@@ -4,13 +4,9 @@ import App from "./App";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
 } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import About from "./components/About/About";
-import Services from "./components/Service/Services";
 const Layout = ({ children }) => (
   <div>
     <Header />

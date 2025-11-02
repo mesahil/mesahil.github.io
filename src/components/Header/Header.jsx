@@ -29,12 +29,7 @@ const Header = () => {
           <img
             src="/logo.png"
             alt="AccLaw Professionals Logo"
-            width={100}
-            height={100}
-            style={{
-              objectFit: "contain",
-              filter: "contrast(1.1) saturate(1.2)",
-            }}
+            className="logo-image"
           />
           <div className="logo-text">
             <h1 className="firm-name">AccLaw Professionals</h1>

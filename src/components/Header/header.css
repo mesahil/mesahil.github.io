@@ -1,60 +1,92 @@
 /* Header Styles */
 
 .header-container {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 20px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e2e8f0;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
+  gap: 1rem;
+}
+
+.logo-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: contrast(1.1) saturate(1.2);
 }
 
 .logo-text {
-  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .firm-name {
-  font-size: 1.8rem;
-  color: #333;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.5px;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .firm-tagline {
-  font-size: 0.9rem;
-  color: #ff6b6b;
+  font-size: 0.65rem;
+  color: #64748b;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 2px;
+  line-height: 1;
 }
 
 /* Desktop Nav Links */
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .nav-link {
-  color: inherit;
+  color: #475569;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  font-size: 1.1rem;
-  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 600;
   background-color: transparent;
+  position: relative;
+  width: 140px;
+  text-align: center;
 }
 
 .nav-link.active {
-  color: #fff;
-  background-color: #ff6b6b;
+  color: #ffffff;
+  background-color: #1e3a8a;
 }
 
 .nav-link:hover {
-  transform: scale(1.05);
+  color: #1e3a8a;
+  background-color: #f1f5f9;
 }
 
 .nav-link.pending {
@@ -66,37 +98,70 @@
   display: none;
   flex-direction: column;
   cursor: pointer;
+  padding: 0.5rem;
 }
 
 .icon {
-  width: 25px;
+  width: 28px;
   height: 3px;
-  background-color: #333;
+  background-color: #1e3a8a;
   margin: 4px 0;
   transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
 /* Hamburger Menu Animation */
-.icon.open {
-  transform: rotate(45deg);
-  background-color: #ff6b6b;
+.icon.open:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.icon.open:nth-child(2) {
+  opacity: 0;
+}
+
+.icon.open:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
 }
 
 .nav-links.open {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
-  width: 200px;
+  top: 80px;
+  right: 2rem;
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 220px;
+  gap: 0.5rem;
   z-index: 999;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links.open .nav-link {
+  width: 100%;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .header-container {
+    padding: 0.75rem 1rem;
+  }
+
+  .logo-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .firm-name {
+    font-size: 1.1rem;
+  }
+
+  .firm-tagline {
+    font-size: 0.6rem;
+  }
+
   .nav-links {
     display: none;
   }
@@ -109,5 +174,25 @@
 @media (min-width: 769px) {
   .mobile-menu-icon {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .firm-name {
+    font-size: 1rem;
+  }
+
+  .firm-tagline {
+    font-size: 0.55rem;
+    letter-spacing: 0.5px;
+  }
+
+  .logo-container {
+    gap: 0.75rem;
   }
 }
