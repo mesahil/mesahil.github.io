@@ -24,26 +24,38 @@
   gap: 1rem;
 }
 
+.logo-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: contrast(1.1) saturate(1.2);
+}
+
 .logo-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .firm-name {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: #1e3a8a;
   font-family: 'Poppins', sans-serif;
   letter-spacing: -0.5px;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .firm-tagline {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: #64748b;
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-top: -2px;
+  margin: 0;
+  margin-top: 2px;
+  line-height: 1;
 }
 
 /* Desktop Nav Links */
@@ -63,6 +75,8 @@
   font-weight: 600;
   background-color: transparent;
   position: relative;
+  width: 140px;
+  text-align: center;
 }
 
 .nav-link.active {
@@ -125,8 +139,29 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
+.nav-links.open .nav-link {
+  width: 100%;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+  .header-container {
+    padding: 0.75rem 1rem;
+  }
+
+  .logo-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .firm-name {
+    font-size: 1.1rem;
+  }
+
+  .firm-tagline {
+    font-size: 0.6rem;
+  }
+
   .nav-links {
     display: none;
   }
@@ -139,5 +174,25 @@
 @media (min-width: 769px) {
   .mobile-menu-icon {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .firm-name {
+    font-size: 1rem;
+  }
+
+  .firm-tagline {
+    font-size: 0.55rem;
+    letter-spacing: 0.5px;
+  }
+
+  .logo-container {
+    gap: 0.75rem;
   }
 }
