@@ -1,5 +1,4 @@
-import Header from "./components/Header/Header";
-import "./app.css";
+import "./App.css";
 import About from "./components/About/About";
 import Services from "./components/Service/Services";
 function App() {
