@@ -26,6 +26,51 @@ const values = [
   },
 ];
 
+const leadershipMembers = [
+  {
+    name: "Rohit Khatri",
+    title: "Corporate Governance Professional",
+    initials: "RK",
+    credentials: ["Registered Trade Mark Agent", "8+ Years Experience"],
+    bio: [
+      "Rohit Khatri is a corporate governance professional with 8+ years of specialised experience in corporate laws, regulatory compliance, and strategic business advisory. He is also a Registered Trade Mark Agent, representing clients in Trademark & Design registrations, prosecution, and enforcement.",
+      "With deep exposure to cross-border structuring, brand protection and intellectual property management, he partners with businesses to secure their legal foundation, safeguard intangible assets, and support their expansion journey.",
+      "Recognised for his ethical approach, transparency and value-focused advisory, Rohit is committed to strengthening corporate governance systems, enhancing stakeholder trust, and guiding organisations in building sustainable, compliant, and future-ready business frameworks."
+    ],
+    expertise: [
+      "Corporate Law & Secretarial Compliance",
+      "SEBI & Listing Regulations",
+      "Capital Market Compliances",
+      "Secretarial Audit & Due Diligence",
+      "Industrial Design registration",
+      "FEMA advisory & RBI filings",
+      "Trademark filings & brand protection",
+      "Corporate structuring & LLP advisory"
+    ]
+  },
+  {
+    name: "Rahul",
+    title: "Co-Founder & Principal Consultant",
+    initials: "R",
+    credentials: ["B.Com", "CA Inter", "MBA", "10+ Years Experience"],
+    bio: [
+      "With over 10 years of experience, Rahul specializes in GST, TDS, accounting, books finalisation, internal audit, statutory audit, ICFR testing, and pre-audit services. He delivers proactive compliance, risk management, and advisory solutions to clients across diverse sectors, ensuring robust financial controls and transparent audit processes.",
+      "His strong academic background, combined with hands-on expertise, supports businesses in achieving tax efficiency, regulatory compliance, and sustainable growth."
+    ],
+    expertise: [
+      "GST Compliance",
+      "TDS Management",
+      "Accounting & Books Finalisation",
+      "Internal Audit",
+      "Statutory Audit",
+      "ICFR Testing",
+      "Pre-Audit Services",
+      "Risk Management"
+    ]
+  },
+
+];
+
 const About = () => {
   return (
     <div className="about" id="about">
@@ -74,45 +119,35 @@ const About = () => {
         <p className="leadership-intro">
           Driven by expertise, guided by experience
         </p>
-        <div className="leadership-card">
-          <div className="leader-image-placeholder">
-            <span className="leader-initials">R</span>
-          </div>
-          <div className="leader-content">
-            <h3 className="leader-name">Rahul</h3>
-            <p className="leader-title">Co-Founder & Principal Consultant</p>
-            <div className="leader-credentials">
-              <span className="credential-badge">B.Com</span>
-              <span className="credential-badge">CA Inter</span>
-              <span className="credential-badge">MBA</span>
-              <span className="credential-badge">10+ Years Experience</span>
+        {leadershipMembers.map((member, index) => (
+          <div className="leadership-card" key={index}>
+            <div className="leader-image-placeholder">
+              <span className="leader-initials">{member.initials}</span>
             </div>
-            <p className="leader-bio">
-              With over 10 years of experience, Rahul specializes in GST, TDS, accounting,
-              books finalisation, internal audit, statutory audit, ICFR testing, and pre-audit
-              services. He delivers proactive compliance, risk management, and advisory solutions
-              to clients across diverse sectors, ensuring robust financial controls and transparent
-              audit processes.
-            </p>
-            <p className="leader-bio">
-              His strong academic background, combined with hands-on expertise, supports businesses
-              in achieving tax efficiency, regulatory compliance, and sustainable growth.
-            </p>
-            <div className="leader-expertise">
-              <h4>Core Expertise</h4>
-              <div className="expertise-tags">
-                <span className="expertise-tag">GST Compliance</span>
-                <span className="expertise-tag">TDS Management</span>
-                <span className="expertise-tag">Accounting & Books Finalisation</span>
-                <span className="expertise-tag">Internal Audit</span>
-                <span className="expertise-tag">Statutory Audit</span>
-                <span className="expertise-tag">ICFR Testing</span>
-                <span className="expertise-tag">Pre-Audit Services</span>
-                <span className="expertise-tag">Risk Management</span>
+            <div className="leader-content">
+              <h3 className="leader-name">{member.name}</h3>
+              <p className="leader-title">{member.title}</p>
+              <div className="leader-credentials">
+                {member.credentials.map((credential, credIndex) => (
+                  <span className="credential-badge" key={credIndex}>{credential}</span>
+                ))}
+              </div>
+              {member.bio.map((paragraph, bioIndex) => (
+                <p className="leader-bio" key={bioIndex}>
+                  {paragraph}
+                </p>
+              ))}
+              <div className="leader-expertise">
+                <h4>Core Expertise</h4>
+                <div className="expertise-tags">
+                  {member.expertise.map((skill, skillIndex) => (
+                    <span className="expertise-tag" key={skillIndex}>{skill}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </section>
 
       <section className="about-values">
