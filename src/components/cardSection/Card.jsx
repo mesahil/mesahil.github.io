@@ -8,6 +8,13 @@ const ShowCards = ({ dataArray }) => {
           <span className="icon">{data.icon}</span>
           <h2>{data.title}</h2>
           <p>{data.description}</p>
+          {data.subServices && data.subServices.length > 0 && (
+            <ul className="sub-services">
+              {data.subServices.map((subService, subIndex) => (
+                <li key={subIndex}>{subService}</li>
+              ))}
+            </ul>
+          )}
         </div>
       ))}
     </section>
