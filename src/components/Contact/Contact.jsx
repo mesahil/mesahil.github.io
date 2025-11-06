@@ -50,9 +50,9 @@ const Contact = () => {
               <div className="info-text">
                 <h3>Address</h3>
                 <p>
-                  F-2141, 12th Avenue Gaur City-II
+                C-52 Mayfield garden, 
                   <br />
-                  Greater Noida 201318
+                  Gurgaon-122018
                 </p>
               </div>
             </div>
@@ -64,7 +64,7 @@ const Contact = () => {
                 <p>
                   <a href="tel:+919716661654">+91 9716661654</a>
                   <br />
-                  <a href="tel:+919582534575">+91 9582534575</a>
+                  <a href="tel:+918826133233">+91 8826133233</a>
                 </p>
               </div>
             </div>
@@ -74,8 +74,8 @@ const Contact = () => {
               <div className="info-text">
                 <h3>Email</h3>
                 <p>
-                  <a href="mailto:acclawprofessionals@gmail.com">
-                    acclawprofessionals@gmail.com
+                  <a href="mailto:info@acclawprofessionals.com">
+                  info@acclawprofessionals.com
                   </a>
                 </p>
               </div>

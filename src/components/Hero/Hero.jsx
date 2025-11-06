@@ -63,12 +63,12 @@ const Hero = () => {
               alt="Professional business team"
               className="hero-main-image"
             />
-            <div className="hero-image-overlay">
+            {/* <div className="hero-image-overlay">
               <div className="overlay-badge">
                 <span className="badge-icon">✓</span>
                 <span className="badge-text">Trusted by 500+ Clients</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

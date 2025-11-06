@@ -23,14 +23,6 @@ const Footer = () => {
           <h3>Follow Us</h3>
           <div className="social">
             <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon facebook"
-            >
-              Facebook
-            </a>
-            <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
