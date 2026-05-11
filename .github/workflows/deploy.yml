@@ -28,8 +28,10 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      # Pin npm so lockfile validation matches a stable arborist (avoids npm ci
+      # failing when the runner's default npm is newer than the lockfile author).
       - name: Install dependencies
-        run: npm ci
+        run: npx --yes npm@10.8.2 ci
 
       - name: Build
         run: npm run build
