@@ -159,11 +159,30 @@
   min-height: 120px;
 }
 
+.contact-form-status {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contact-form-status.success {
+  color: #15803d;
+}
+
+.contact-form-status.error {
+  color: #b91c1c;
+}
+
 .submit-btn {
   width: 100%;
   padding: 1rem 2rem;
   font-size: 1.125rem;
   margin-top: 1rem;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 /* Responsive Design */

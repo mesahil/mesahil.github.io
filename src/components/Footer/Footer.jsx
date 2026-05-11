@@ -19,27 +19,6 @@ const Footer = () => {
             <a href="/#contactUs">Contact</a>
           </div>
         </div>
-        <div className="footer-section">
-          <h3>Follow Us</h3>
-          <div className="social">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon twitter"
-            >
-              Twitter
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon linkedin"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
       </div>
       <div className="footer-bottom">
         <p>&copy; 2024 Acclaw Professionals LLP - All rights reserved.</p>
