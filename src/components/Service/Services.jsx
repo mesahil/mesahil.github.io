@@ -141,66 +141,6 @@ const services = [
   }
 ];
 
-const trademarkServices = [
-  {
-    title: "Trademark Search & Registration",
-    intro:
-      "Securing a trademark requires a strategic start to prevent future legal conflicts.",
-    points: [
-      {
-        label: "Comprehensive Search",
-        text: "We run your mark through the official IP India Public Search database to check for phonetic and visual similarities.",
-      },
-      {
-        label: "Class Selection",
-        text: "We pinpoint the exact classes under the NICE classification to maximize your legal protection.",
-      },
-      {
-        label: "Application Filing",
-        text: "We draft and submit Form TM-A accurately to get your application processed immediately.",
-      },
-    ],
-  },
-  {
-    title: "Trademark Examination Replies",
-    intro:
-      "If the Trademark Registry issues an examination report with objections (e.g., under Section 9 for descriptive marks or Section 11 for identical marks), your application can get blocked.",
-    points: [
-      {
-        label: "Analysis",
-        text: "We dissect the examiner's objections to find strong counterarguments.",
-      },
-      {
-        label: "Drafting Responses",
-        text: "We write comprehensive, case-law-backed legal replies to clear the objections.",
-      },
-      {
-        label: "Evidence Gathering",
-        text: 'We help you compile user affidavits and invoices to prove "prior user" status.',
-      },
-    ],
-  },
-  {
-    title: "Trademark Show-Cause Hearings",
-    intro:
-      "If your written reply does not fully satisfy the examiner, the Registry schedules a physical or virtual show-cause hearing.",
-    points: [
-      {
-        label: "Case Preparation",
-        text: "We build a robust legal strategy tailored to your specific bench.",
-      },
-      {
-        label: "Representation",
-        text: "Our professionals argue your case directly before the Trademark Registrar.",
-      },
-      {
-        label: "Post-Hearing Tracking",
-        text: 'We monitor the registry status daily until your mark moves to "Accepted & Advertised."',
-      },
-    ],
-  },
-];
-
 const Services = () => {
   return (
     <div className="services" id="service">
@@ -215,34 +155,6 @@ const Services = () => {
       </section>
 
       <ShowCards dataArray={services} />
-
-      <section
-        className="trademark-services"
-        id="trademark-services"
-        aria-labelledby="trademark-services-heading"
-      >
-        <h2 id="trademark-services-heading" className="trademark-services__title">
-          Our Trademark Services
-        </h2>
-        <div className="trademark-services__grid">
-          {trademarkServices.map((block) => (
-            <article key={block.title} className="trademark-services__card">
-              <h3 className="trademark-services__card-title">{block.title}</h3>
-              <p className="trademark-services__intro">{block.intro}</p>
-              <ul className="trademark-services__list">
-                {block.points.map((item) => (
-                  <li key={item.label} className="trademark-services__item">
-                    <span className="trademark-services__item-label">
-                      {item.label}
-                    </span>
-                    {item.text}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
     </div>
   );
 };

@@ -114,7 +114,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* <section className="leadership-section">
+      <section className="leadership-section">
         <h2>Meet Our Leadership</h2>
         <p className="leadership-intro">
           Driven by expertise, guided by experience
@@ -148,7 +148,7 @@ const About = () => {
             </div>
           </div>
         ))}
-      </section> */}
+      </section>
 
       <section className="about-values">
         <h2>Our Core Values</h2>
