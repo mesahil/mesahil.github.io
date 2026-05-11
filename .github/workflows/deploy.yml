@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -31,10 +28,8 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      # Pin npm so lockfile validation matches a stable arborist (avoids npm ci
-      # failing when the runner's default npm is newer than the lockfile author).
       - name: Install dependencies
-        run: npx --yes npm@10.8.2 ci
+        run: npm ci
 
       - name: Build
         run: npm run build
@@ -45,7 +40,6 @@ jobs:
           path: ./build
 
   deploy:
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
