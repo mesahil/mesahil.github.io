@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./contact.css";
 
-const FORMSPREE_FORM_ID =
-  process.env.REACT_APP_FORMSPREE_FORM_ID?.trim() || "xaqvaovp";
+const FORMSPREE_FORM_ID = "xaqvaovp";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
