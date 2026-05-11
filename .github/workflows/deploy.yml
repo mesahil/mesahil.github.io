@@ -33,6 +33,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          REACT_APP_FORMSPREE_FORM_ID: ${{ secrets.REACT_APP_FORMSPREE_FORM_ID }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

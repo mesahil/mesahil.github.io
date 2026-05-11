@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./contact.css";
 
+const FORMSPREE_FORM_ID =
+  process.env.REACT_APP_FORMSPREE_FORM_ID?.trim() || "xaqvaovp";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,26 +12,66 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [submitStatus, setSubmitStatus] = useState("idle");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (submitStatus !== "idle") setSubmitStatus("idle");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend
-    console.log("Form submitted:", formData);
-    alert("Thank you for contacting us! We will get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+    if (!FORMSPREE_FORM_ID) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const res = await fetch(
+        `https://formspree.io/f/${FORMSPREE_FORM_ID}`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            _replyto: formData.email,
+            _subject: formData.subject,
+            phone: formData.phone || "(not provided)",
+            subject: formData.subject,
+            message: formData.message,
+          }),
+        }
+      );
+
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus("error");
+        if (process.env.NODE_ENV === "development" && data?.errors) {
+          // eslint-disable-next-line no-console
+          console.error("Formspree:", data.errors);
+        }
+      }
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -96,6 +139,23 @@ const Contact = () => {
 
           <div className="contact-form-wrapper">
             <h2>Send Us a Message</h2>
+            {!FORMSPREE_FORM_ID ? (
+              <p className="form-config-notice">
+                This form is not configured yet. Please use the phone number or
+                email on the left to reach us.
+              </p>
+            ) : null}
+            {submitStatus === "success" ? (
+              <p className="form-message form-message--success" role="status">
+                Thank you for your message. We will get back to you soon.
+              </p>
+            ) : null}
+            {submitStatus === "error" ? (
+              <p className="form-message form-message--error" role="alert">
+                Something went wrong. Please try again or contact us by phone or
+                email.
+              </p>
+            ) : null}
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <input
@@ -105,6 +165,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={!FORMSPREE_FORM_ID || isSubmitting}
                   className="form-input"
                 />
               </div>
@@ -117,6 +178,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={!FORMSPREE_FORM_ID || isSubmitting}
                   className="form-input"
                 />
               </div>
@@ -128,6 +190,7 @@ const Contact = () => {
                   placeholder="Your Phone Number"
                   value={formData.phone}
                   onChange={handleChange}
+                  disabled={!FORMSPREE_FORM_ID || isSubmitting}
                   className="form-input"
                 />
               </div>
@@ -140,6 +203,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
+                  disabled={!FORMSPREE_FORM_ID || isSubmitting}
                   className="form-input"
                 />
               </div>
@@ -151,13 +215,18 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows="5"
+                  rows={5}
+                  disabled={!FORMSPREE_FORM_ID || isSubmitting}
                   className="form-input form-textarea"
-                ></textarea>
+                />
               </div>
 
-              <button type="submit" className="btn-primary submit-btn">
-                Send Message
+              <button
+                type="submit"
+                className="btn-primary submit-btn"
+                disabled={!FORMSPREE_FORM_ID || isSubmitting}
+              >
+                {isSubmitting ? "Sending…" : "Send Message"}
               </button>
             </form>
           </div>
