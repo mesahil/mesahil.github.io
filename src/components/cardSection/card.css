@@ -1,21 +1,27 @@
 .list-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 280px), 1fr)
+  );
+  gap: clamp(1rem, 3vw, 2rem);
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 clamp(0.75rem, 4vw, 1rem);
+  min-width: 0;
 }
 
 .item {
   background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
   border: 2px solid #e2e8f0;
   border-radius: 16px;
-  padding: 2.5rem 2rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2rem);
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .item::before {
@@ -35,13 +41,12 @@
 }
 
 .item:hover {
-  transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
   border-color: #1e3a8a;
 }
 
 .item h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.125rem, 2.5vw + 0.75rem, 1.5rem);
   color: #1e3a8a;
   margin: 1.5rem 0 1rem;
   font-family: 'Poppins', sans-serif;
@@ -63,7 +68,7 @@
 }
 
 .sub-services li {
-  font-size: 0.9rem;
+  font-size: clamp(0.8125rem, 1.5vw + 0.65rem, 0.9rem);
   color: #64748b;
   padding: 0.5rem 0 0.5rem 1.5rem;
   position: relative;
@@ -79,7 +84,7 @@
 }
 
 .icon {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 6vw + 1.5rem, 3.5rem);
   margin-bottom: 1rem;
   display: inline-block;
   transition: transform 0.3s ease;
@@ -89,13 +94,8 @@
   transform: scale(1.1) rotate(5deg);
 }
 
-@media (min-width: 768px) {
-  .item {
-    flex: 1 1 calc(50% - 20px);
-  }
-}
-@media (min-width: 1024px) {
-  .item {
-    flex: 1 1 calc(25% - 20px);
+@media (hover: hover) and (pointer: fine) {
+  .item:hover {
+    transform: translateY(-8px);
   }
 }
