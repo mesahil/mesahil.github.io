@@ -98,13 +98,13 @@ const Contact = () => {
               <div className="info-icon">📍</div>
               <div className="info-text">
                 <h3>Address</h3>
-                <p>
-                C-52 Mayfield garden, 
-                  <br />
-                  Gurgaon-122018
-                </p>
+                <ul>
+                  <li>C-52 Mayfield garden, Gurgaon-122018</li>
+                  <li>J-14, Sector 12, Noida</li>
+                </ul>
               </div>
             </div>
+       
 
             <div className="info-item">
               <div className="info-icon">📞</div>
