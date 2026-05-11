@@ -19,7 +19,7 @@ const Footer = () => {
             <a href="/#contactUs">Contact</a>
           </div>
         </div>
-        <div className="footer-section">
+        {/* <div className="footer-section">
           <h3>Follow Us</h3>
           <div className="social">
             <a
@@ -39,7 +39,7 @@ const Footer = () => {
               LinkedIn
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="footer-bottom">
         <p>&copy; 2024 Acclaw Professionals LLP - All rights reserved.</p>
