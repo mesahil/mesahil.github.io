@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./contact.css";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqvaovp";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,26 +11,73 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState({
+    type: null,
+    message: "",
+  });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+    if (formStatus.type) {
+      setFormStatus({ type: null, message: "" });
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend
-    console.log("Form submitted:", formData);
-    alert("Thank you for contacting us! We will get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+    setSubmitting(true);
+    setFormStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || "",
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok) {
+        setFormStatus({
+          type: "success",
+          message:
+            "Thank you for contacting us! We will get back to you soon.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        const errMsg =
+          data?.errors?.map((err) => err.message).join(" ") ||
+          data?.error ||
+          "Something went wrong. Please try again.";
+        setFormStatus({ type: "error", message: errMsg });
+      }
+    } catch {
+      setFormStatus({
+        type: "error",
+        message: "Network error. Please check your connection and try again.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -156,9 +205,21 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn-primary submit-btn">
-                Send Message
+              <button
+                type="submit"
+                className="btn-primary submit-btn"
+                disabled={submitting}
+              >
+                {submitting ? "Sending…" : "Send Message"}
               </button>
+              {formStatus.type && (
+                <p
+                  className={`contact-form-status ${formStatus.type}`}
+                  role="status"
+                >
+                  {formStatus.message}
+                </p>
+              )}
             </form>
           </div>
         </div>
