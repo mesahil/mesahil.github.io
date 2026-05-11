@@ -15,6 +15,10 @@ const Header = () => {
     }
   }, [location]);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const linkArr = [
     { to: "/", name: "Home" },
     { to: "/#about", name: "About" },
@@ -25,7 +29,15 @@ const Header = () => {
   return (
     <header className="header-container">
       <div className="header-content">
-        <div className="logo-container cursor-pointer">
+        <NavLink
+          to="/"
+          end
+          className="logo-container cursor-pointer"
+          onClick={() => {
+            setMobileMenuOpen(false);
+            scrollToTop();
+          }}
+        >
           <img
             src="/logo.png"
             alt="AccLaw Professionals Logo"
@@ -35,7 +47,7 @@ const Header = () => {
             <h1 className="firm-name">AccLaw Professionals</h1>
             <p className="firm-tagline">PERFECTION THROUGH PROFESSIONALS</p>
           </div>
-        </div>
+        </NavLink>
 
         {/* Desktop Links */}
         <nav className={`nav-links ${isMobileMenuOpen ? "open" : ""}`}>
@@ -43,12 +55,18 @@ const Header = () => {
             <NavLink
               key={index}
               to={link.to}
+              end={link.to === "/"}
               className={({ isActive, isPending }) =>
                 `${isPending ? "nav-link pending" : "nav-link"} ${
                   isActive ? "active" : ""
                 }`
               }
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (link.to === "/") {
+                  scrollToTop();
+                }
+              }}
             >
               {link.name}
             </NavLink>
